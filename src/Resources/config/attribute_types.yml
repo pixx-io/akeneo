@@ -1,0 +1,10 @@
+parameters:
+    flagbit.pixxio.attribute_type.class: Flagbit\PixxioConnector\AttributeType\PixxioType
+
+services:
+    flagbit.pixio.attribute_type.pixxio:
+        class: "%flagbit.pixxio.attribute_type.class%"
+        arguments:
+            - text
+        tags:
+            - {name: pim_catalog.attribute_type, alias: pixxio_image, entity: "%pim_catalog.entity.product.class%"}

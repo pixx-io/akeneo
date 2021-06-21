@@ -1,0 +1,17 @@
+config:
+    paths:
+        pim/product-edit-form/main-image: pixxioconnector/js/product/form/main-image.ts
+        pim/media-url-generator: pixxioconnector/js/generator/media-url-generator
+
+        flagbit/pixxio-field: pixxioconnector/js/product/field/media-field
+        flagbit/template/product/field/pixxio-image: pixxioconnector/templates/product/field/media.html
+
+        pixxio/jsdk: pixxioconnector/lib/jsdk/pixxio.jsdk.min
+
+        pixxio/modal/overlay: pixxioconnector/js/form/modal
+        pixxio/modal/overlay/template: pixxioconnector/templates/form/modal.html
+
+    config:
+        pim/form/common/attributes/create-button:
+            attribute_icons:
+                pixxio_image: asset

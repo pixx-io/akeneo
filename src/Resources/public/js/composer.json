@@ -1,0 +1,32 @@
+{
+    "name": "flagbit/akeneo-pixxio-connector",
+    "description": "Pixx.io integration to Akeneo 5 CE",
+    "type": "library",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Flagbit\\PixxioConnector\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Flagbit\\PixxioConnector\\Test\\": "tests/"
+        }
+    },
+    "conflict": {
+        "akeneo/pim-enterprise-dev": "*"
+    },
+    "require": {
+        "ext-json": "*",
+        "akeneo/pim-community-dev": "^5.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^6.1",
+        "phpunit/phpunit": "^8.0",
+        "squizlabs/php_codesniffer": "^3.5",
+        "overtrue/phplint": "^1.2",
+        "symfony/debug-bundle": "^4.4",
+        "symfony/web-profiler-bundle": "^4.4",
+        "symfony/web-server-bundle": "^4.4"
+    }
+}

@@ -1,0 +1,3 @@
+pim_enrich.entity.attribute.property.type.pixxio_image: Pixxio Media
+flagbit_pixxio.message.add: Click to select from Pixxio
+flagbit_pixxio.message.config: Configuration is missing, please configrue the extension accordingly.
