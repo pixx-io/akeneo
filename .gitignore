@@ -1,0 +1,14 @@
+/.phplint-cache
+/vendor/
+/phpunit.xml
+/build/
+/composer.phar
+/composer.lock
+/coverage
+/tests/Kernel/var
+/yarn.lock
+/tests/public/js/extensions.json
+/.phpunit.result.cache
+/node_modules
+./vendor
+/.idea
