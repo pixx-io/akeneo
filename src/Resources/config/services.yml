@@ -4,7 +4,7 @@ parameters:
     pixxio_api_old: '%env(PIXXIO_OLD_VERSION)%'
 
 services:
-    flagbit_pixxio_connector_internal_api_config:
+    flagbit.pixxio.connector_internal_api_config:
         class:  Flagbit\PixxioConnector\Controller\InternalApi\ConfigController
         public: true
         arguments:
@@ -25,7 +25,7 @@ services:
         class: '%pim_catalog.updater.setter.value.class%'
         parent: 'pim_catalog.updater.setter.abstract'
         arguments:
-            - ['pixxio_image']
+            - [ !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
         tags: [name: 'pim_catalog.updater.setter']
 
     flagbit.pixxio.image.normalizer:

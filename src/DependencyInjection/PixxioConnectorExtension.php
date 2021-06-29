@@ -20,7 +20,6 @@ class PixxioConnectorExtension extends Extension
         $loader->load('services.yml');
         $loader->load('attribute_types.yml');
         $loader->load('factories.yml');
-
         $loader->load('array_converters.yml');
         $loader->load('comparators.yml');
         $loader->load('validators.yml');

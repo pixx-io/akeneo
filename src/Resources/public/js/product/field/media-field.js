@@ -12,10 +12,22 @@ define(
         'oro/mediator',
         'pixxio/modal/overlay',
         'pim/media-url-generator',
+        'oro/translator',
         'pixxio/jsdk',
         'jquery.slimbox',
-    ], function ($, Field, _, Routing, AttributeManager, fieldTemplate, Dialog, mediator, FormModal, MediaUrlGenerator) {
-
+    ], function (
+        $,
+        Field,
+        _,
+        Routing,
+        AttributeManager,
+        fieldTemplate,
+        Dialog,
+        mediator,
+        FormModal,
+        MediaUrlGenerator,
+        __
+        ) {
         return Field.extend(
             {
                 fieldTemplate: _.template(fieldTemplate),
@@ -80,7 +92,7 @@ define(
                                             }.bind(formModal)
                                         );
                                     } else {
-                                        Dialog.alert('Configuration is missing, please configrue the extension accordingly.')
+                                        Dialog.alert(__('flagbit_pixxio.message.config'))
                                     }
                                 }.bind(this)
                             )

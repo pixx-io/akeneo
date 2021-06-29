@@ -18,7 +18,7 @@ class PixxioValueFactoryTest extends KernelTestCase
         $container = self::$container;
 
         self::$field = $this->createAttribute(true, true);
-        self::$valueFactory = $container->get('flagbit_pixxio.factory.value.field');
+        self::$valueFactory = $container->get('flagbit.pixxio.factory.value.field');
     }
 
     public function testCreateByCheckingData(): void

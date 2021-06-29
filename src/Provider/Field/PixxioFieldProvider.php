@@ -8,7 +8,7 @@ use Flagbit\PixxioConnector\AttributeType\PixxioType;
 
 class PixxioFieldProvider implements FieldProviderInterface
 {
-    public const PIXXIO_FIELD = 'pixxio-image-field';
+    private const PIXXIO_FIELD = 'pixxio-image-field';
 
     public function getField($element)
     {

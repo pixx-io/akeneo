@@ -8,13 +8,13 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-class ConfigController
+final class ConfigController
 {
-    protected const ACL_EDIT_MODEL_ATTRIBUTES = 'pim_enrich_product_model_edit_attributes';
-    protected const ACL_EDIT_VARIANT_ATTRIBUTES = 'pim_enrich_product_edit_attributes';
+    private const ACL_EDIT_MODEL_ATTRIBUTES = 'pim_enrich_product_model_edit_attributes';
+    private const ACL_EDIT_VARIANT_ATTRIBUTES = 'pim_enrich_product_edit_attributes';
 
-    protected static array $config = [];
-    protected SecurityFacade $securityFacade;
+    private static array $config = [];
+    private SecurityFacade $securityFacade;
 
     public function __construct(
         SecurityFacade $securityFacade,
@@ -22,7 +22,7 @@ class ConfigController
         ?string $configUrl,
         ?bool   $configVersion
     ) {
-        $this->securityFacade                 = $securityFacade;
+        $this->securityFacade = $securityFacade;
 
         static::$config = [
             'key' => $configKey ?? '',

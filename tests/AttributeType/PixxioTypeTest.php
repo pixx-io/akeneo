@@ -15,7 +15,7 @@ class PixxioTypeTest extends KernelTestCase
     {
         $container = self::$container;
 
-        $attributeType = $container->get('flagbit.pixio.attribute_type.pixxio');
+        $attributeType = $container->get('flagbit.pixxio.attribute_type.image');
 
         self::assertEquals('pixxio_image', $attributeType->getName());
     }

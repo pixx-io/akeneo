@@ -1,7 +1,7 @@
 services:
-    pim_catalog.comparator.attribute.pixxio_image:
+    flagbit.pixxio.comparator.attribute.pixxio_image:
         class: '%pim_catalog.comparator.attribute.scalar.class%'
         arguments:
-            - ['pixxio_image']
+            - [ !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
         tags:
             - { name: pim_catalog.attribute.comparator, priority: -128 }

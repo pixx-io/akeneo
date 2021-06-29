@@ -1,7 +1,7 @@
 const BaseMainImage = require('pim/form/common/main-image');
 const FetcherRegistry = require('pim/fetcher-registry');
 const Routing = require('routing');
-const Genertator = require('pim/media-url-generator');
+const Generator = require('pim/media-url-generator');
 
 class MainImage extends BaseMainImage {
   configure() {
@@ -41,7 +41,7 @@ class MainImage extends BaseMainImage {
 
         if (0 !== imageData.length && imageData.startsWith('http', 0))
         {
-            this.el.src = Genertator.getMediaShowUrl(imageData, 'thumbnail');
+            this.el.src = Generator.getMediaShowUrl(imageData, 'thumbnail');
             return;
         }
 

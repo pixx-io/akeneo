@@ -10,7 +10,7 @@ use Akeneo\Pim\Enrichment\Component\Product\Value\ScalarValue;
 
 final class ImageNormalizerDecorator extends ImageNormalizer
 {
-    private ?ImageNormalizer $imageNormalizer = null;
+    private ImageNormalizer $imageNormalizer;
 
     public function __construct(ImageNormalizer $imageNormalizer)
     {
@@ -39,7 +39,7 @@ final class ImageNormalizerDecorator extends ImageNormalizer
         return null;
     }
 
-    protected function isUrl($data): bool
+    private function isUrl($data): bool
     {
         return !empty($data) && is_string($data) && \str_starts_with($data, 'http');
     }
