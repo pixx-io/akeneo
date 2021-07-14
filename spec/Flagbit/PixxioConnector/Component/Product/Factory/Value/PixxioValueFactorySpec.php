@@ -11,7 +11,7 @@ use PhpSpec\ObjectBehavior;
 
 class PixxioValueFactorySpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(PixxioValueFactory::class);
     }

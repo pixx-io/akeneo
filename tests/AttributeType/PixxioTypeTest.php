@@ -11,20 +11,9 @@ class PixxioTypeTest extends KernelTestCase
         self::bootKernel();
     }
 
-    public function testGetName()
-    {
-        $container = self::$container;
-
-        $attributeType = $container->get('flagbit.pixxio.attribute_type.image');
-
-        self::assertEquals('pixxio_image', $attributeType->getName());
-    }
-
     public function testAttributeTypeIsRegisteredCorrect()
     {
-        $container = self::$container;
-
-        $attributeTypeRegistry = $container->get('pim_catalog.registry.attribute_type');
+        $attributeTypeRegistry = self::$container->get('pim_catalog.registry.attribute_type');
 
         $attributeType = $attributeTypeRegistry->get('pixxio_image');
 

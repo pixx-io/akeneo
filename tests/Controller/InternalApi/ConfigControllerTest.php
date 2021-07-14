@@ -12,11 +12,6 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class ConfigControllerTest extends KernelTestCase
 {
-    protected function setUp(): void
-    {
-        self::bootKernel();
-    }
-
     public function testIndexAction()
     {
         $request = $this->getRequestMock(true);

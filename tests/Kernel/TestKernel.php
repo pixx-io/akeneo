@@ -29,16 +29,4 @@ class TestKernel extends \Kernel
     {
         return __DIR__;
     }
-
-    protected function build(ContainerBuilder $container)
-    {
-        $serviceIds = [
-            'pim_catalog.validator.constraint_guesser.chained_attribute',
-            'akeneo.pim.enrichment.factory.value',
-            'pim_catalog.repository.attribute',
-            'pim_catalog.repository.cached_attribute',
-            'form.extension',
-        ];
-        $container->addCompilerPass(new PublicServiceCompilerPass($serviceIds));
-    }
 }

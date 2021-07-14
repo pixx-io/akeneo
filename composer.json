@@ -29,6 +29,6 @@
         "symfony/web-server-bundle": "^4.4"
     },
     "archive": {
-        "exclude": ["/spec/", "/tests/", ".github/", ".php_cs.php", "phpunit.xml.dist", ".images/"]
+        "exclude": ["/spec/", "/tests/", "/.github/", ".php_cs.php", "phpunit.xml.dist", "/.images/", "/doc/"]
     }
 }

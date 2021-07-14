@@ -2,11 +2,11 @@
 
 define(
     [
-    'jquery',
-    'underscore',
-    'backbone',
-    'pim/form',
-    'pixxio/modal/overlay/template'
+        'jquery',
+        'underscore',
+        'backbone',
+        'pim/form',
+        'pixxio/modal/overlay/template'
     ], function (
         $,
         _,
@@ -28,7 +28,7 @@ define(
                     BaseForm.prototype.initialize.apply(this, arguments);
                 },
                 configure(meta) {
-                    if(meta && meta.config) {
+                    if (meta && meta.config) {
                         this.config = meta.config;
                     }
                 },
@@ -66,8 +66,8 @@ define(
                 addModalEvent(modal, deferred) {
                     modal.on(
                         'cancel', () => {
-                        deferred.reject();
-                        modal.remove();
+                            deferred.reject();
+                            modal.remove();
                         }
                     );
                 },
