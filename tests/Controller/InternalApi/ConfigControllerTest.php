@@ -45,8 +45,11 @@ class ConfigControllerTest extends KernelTestCase
         $controller = new ConfigController($this->getSecurityFacadeMock([false, true]), 'key', 'url', true);
 
         $actual = $controller->indexAction($request);
-        self::assertEquals(
-            new RedirectResponse('/'), $actual);
+
+        $resp = new RedirectResponse('/');
+
+        self::assertEquals($resp->getStatusCode(), $actual->getStatusCode());
+        self::assertEquals($resp->getTargetUrl(), $actual->getTargetUrl());
     }
 
     private function getRequestMock(bool $expected)
