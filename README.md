@@ -22,7 +22,7 @@ flagbit_pixxio_internal_api:
     resource: '@PixxioConnectorBundle/Resources/config/routing.yml'
 ```
 
-For the last file edit the `.env` file and add your pixxio configuration to it
+For the last file edit the `.env.local` file and add your pixxio configuration to it
 ```
 PIXXIO_KEY=yourPixxioKey
 PIXXIO_URL=https://yourPixxioUrl

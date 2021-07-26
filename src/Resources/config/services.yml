@@ -1,7 +1,10 @@
 parameters:
-    pixxio_api_key: '%env(PIXXIO_KEY)%'
-    pixxio_api_url: '%env(PIXXIO_URL)%'
-    pixxio_api_old: '%env(PIXXIO_OLD_VERSION)%'
+    fallback_csp: true
+    fallback_old: true
+    pixxio_csp_use: '%env(default:fallback_csp:bool:PIXXIO_CSP)%'
+    pixxio_api_key: '%env(default::trim:PIXXIO_KEY)%'
+    pixxio_api_url: '%env(default::trim:PIXXIO_URL)%'
+    pixxio_api_old: '%env(default:fallback_old:bool:PIXXIO_OLD_VERSION)%'
 
 services:
     flagbit.pixxio.connector_internal_api_config:
@@ -38,5 +41,6 @@ services:
         class: Flagbit\PixxioConnector\EventListener\AddContentSecurityPolicyListener
         arguments:
             - '@security.script_nonce_generator'
+            - '%pixxio_csp_use%'
         tags:
             - { name: kernel.event_subscriber }

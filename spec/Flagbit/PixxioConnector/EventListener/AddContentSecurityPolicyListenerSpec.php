@@ -15,7 +15,7 @@ class AddContentSecurityPolicyListenerSpec extends ObjectBehavior
     function let(ScriptNonceGenerator $scriptNonceGenerator)
     {
         $scriptNonceGenerator->getGeneratedNonce()->willReturn('generated_nonce');
-        $this->beConstructedWith($scriptNonceGenerator);
+        $this->beConstructedWith($scriptNonceGenerator, true);
     }
 
     function it_subscribes_to_kernel_response()
@@ -35,6 +35,26 @@ class AddContentSecurityPolicyListenerSpec extends ObjectBehavior
                     [Argument::type('string'), $this->getExpected()]
             )
         ;
+        $response->headers = $responseHeader;
+        $event->getResponse()->willReturn($response);
+        $this->addCspHeaders($event);
+    }
+
+    function it_can_be_disabled(
+        FilterResponseEvent $event,
+        Response $response,
+        ResponseHeaderBag $responseHeader,
+        ScriptNonceGenerator $scriptNonceGenerator
+    ) {
+        $this->beConstructedWith($scriptNonceGenerator, false);
+
+        $responseHeader->set(
+            Argument::any(),
+            Argument::any(),
+            Argument::any()
+        )
+        ->shouldBeCalledTimes(0);
+
         $response->headers = $responseHeader;
         $event->getResponse()->willReturn($response);
         $this->addCspHeaders($event);

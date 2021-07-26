@@ -6,7 +6,7 @@ define(
             getMediaShowUrl: function (filePath, filter) {
                 if ('string' === typeof filePath && filePath.startsWith('http', 0)) {
                     let parts = filePath.split('|');
-                    if (filter === 'thumbnail_small' || filter === 'thumbnail') {
+                    if (filter === 'thumbnail_small' ||  filter === 'thumbnail') {
                         if (2 === parts.length) {
                             const regexQ = /\?w=\d{0,5}/m; // filter '?w=12345'
                             const regexA = /\&w=\d{0,5}/m; // filter '&w=12345'
