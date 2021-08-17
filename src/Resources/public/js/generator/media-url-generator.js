@@ -47,6 +47,23 @@ define(
                     }
                 );
             },
+            isImageFile: function(file) {
+                if (typeof file !== 'undefined') {
+                    let imageFormats = [
+                        'gif',
+                        'jpg',
+                        'jpeg',
+                        'png',
+                        'svg',
+                        'webp'
+                    ];
+                    let fileTypeByExtension = file.split('.').pop();
+
+                    return imageFormats.includes(fileTypeByExtension);
+                }
+
+                throw 'image file not passed to function';
+            }
         };
     }
 );

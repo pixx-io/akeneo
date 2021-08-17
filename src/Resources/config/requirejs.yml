@@ -1,6 +1,6 @@
 config:
     paths:
-        pim/product-edit-form/main-image: pixxioconnector/js/product/form/main-image.ts
+        pixxio/product-edit-form/main-image: pixxioconnector/js/product/form/main-image.ts
         pim/media-url-generator: pixxioconnector/js/generator/media-url-generator
 
         flagbit/pixxio-field: pixxioconnector/js/product/field/media-field
@@ -14,4 +14,4 @@ config:
     config:
         pim/form/common/attributes/create-button:
             attribute_icons:
-                pixxio_image: asset
+                pixxio_image: pixxio

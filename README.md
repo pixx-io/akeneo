@@ -30,7 +30,7 @@ PIXXIO_OLD_VERSION=true
 ```
 Unless told otherwise the `PIXXIO_OLD_VERSION` flag will indicate the v1 version when set to true
 
-If you have an own CSP configuration you can disable the included one by setting the `PIXXIO_CSP=false` variable in your `.env.local`. Make sure you enable Akeneo to connect to the Pixx.io servers.
+This bundle is overriding the server's [CSP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) by default in `\Flagbit\PixxioConnector\EventListener\AddContentSecurityPolicyListener`, which might be unwanted in case of your own security configurations. If you have your own **CSP configuration** you can disable the ones provided by setting the `PIXXIO_CSP=false` variable in your `.env.local`. Make sure you enable Akeneo to connect to the Pixx.io servers, because otherwhise the connection to Pixx.io won't work anymore.
 
 After that, clear cache and rebuild the frontend
 ```bash

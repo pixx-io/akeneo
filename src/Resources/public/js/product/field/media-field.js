@@ -35,6 +35,7 @@ define(
                     'click .edit .field-input:first input[type="text"]': 'openModal',
                     'click  .clear-field': 'clearField',
                     'click  .open-media': 'previewImage',
+                    'click  .open-tab': 'newTab'
                 },
                 renderInput: function (context) {
                     return this.fieldTemplate(context);
@@ -132,11 +133,14 @@ define(
                     this.render();
                 },
                 previewImage: function () {
-                    var mediaUrl = MediaUrlGenerator.getMediaShowUrl(this.getCurrentValue().data, 'preview');
+                    let mediaUrl = MediaUrlGenerator.getMediaShowUrl(this.getCurrentValue().data, 'preview');
                     if (mediaUrl) {
                         $.slimbox(mediaUrl, '', {overlayOpacity: 0.3});
                     }
                 },
+                newTab: function() {
+                    window.open(MediaUrlGenerator.getMediaShowUrl(this.getCurrentValue().data, 'preview'), '_blank');
+                }
             }
         );
     }

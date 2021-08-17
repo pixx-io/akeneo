@@ -20,10 +20,14 @@
             <div class="AknMediaField-info info">
                 <div class="filename" title="<%- value.data.originalFilename %>"><%- value.data.originalFilename %></div>
                 <div class="AknButtonList AknButtonList--centered actions">
-                    <% if (null != mediaPreviewUrl) { %>
-                        <span class="AknButtonList-item AknIconButton AknIconButton--grey open-media"><i class="icon icon-eye-open"></i></span>
+                    <% if (null != mediaPreviewUrl && !mediaUrlGenerator.isImageFile(mediaPreviewUrl)) { %>
+                        <span class="AknButtonList-item AknIconButton AknIconButton--grey open-tab"><i class="icon icon-eye-open"></i></span>
+                    <% } else { %>
+                    <span class="AknButtonList-item AknIconButton AknIconButton--grey open-media"><i class="icon icon-eye-open"></i></span>
                     <% } %>
+                    <% if (null != mediaDownloadUrl && mediaUrlGenerator.isImageFile(mediaDownloadUrl)) { %>
                     <a href="<%- mediaDownloadUrl %>" class="AknButtonList-item AknIconButton AknIconButton--grey download-file" download><i class="icon icon-cloud-download"></i></a>
+                    <% } %>
                     <span class="AknButtonList-item AknIconButton AknIconButton--grey clear-field <%- editMode === 'view' ? 'AknIconButton--hide' : '' %>"><i class="icon icon-trash"></i></span>
                 </div>
             </div>
