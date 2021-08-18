@@ -1,0 +1,36 @@
+<div class="AknMediaField <%- value && value.data && value.data.filePath ? 'has-file' : '' %>" >
+    <% if (!value || !value.data || value.data.filePath === null) { %>
+        <input class="AknMediaField-fileUploaderInput" id="<%- fieldId %>" type="text" data-locale="<%- locale %>" data-scope="<%- scope %>" <%- editMode === 'view' ? 'disabled' : '' %>/>
+        <div class="AknMediaField-emptyContainer">
+            <span title="upload icon" class="AknMediaField-uploadIcon"/>
+            <span><%- _.__('flagbit_pixxio.message.add') %></span>
+        </div>
+    <% } else { %>
+        <div class="AknMediaField-preview preview">
+            <% mediaThumbnailUrl = mediaUrlGenerator.getMediaShowUrl(value.data, 'thumbnail_small') %>
+            <% mediaPreviewUrl   = mediaUrlGenerator.getMediaShowUrl(value.data, 'preview') %>
+            <% mediaDownloadUrl  = mediaUrlGenerator.getMediaDownloadUrl(value.data) %>
+            <% if (null != mediaThumbnailUrl) { %>
+                <div class="AknMediaField-thumb file"><img src="<%- mediaThumbnailUrl %>" class="AknMediaField-image"/></div>
+            <% } else { %>
+                <div class="AknMediaField-thumb file">
+                    <span title="upload icon" class="AknMediaField-uploadIcon"/>
+                </div>
+            <% } %>
+            <div class="AknMediaField-info info">
+                <div class="filename" title="<%- value.data.originalFilename %>"><%- value.data.originalFilename %></div>
+                <div class="AknButtonList AknButtonList--centered actions">
+                    <% if (null != mediaPreviewUrl && !mediaUrlGenerator.isImageFile(mediaPreviewUrl)) { %>
+                        <span class="AknButtonList-item AknIconButton AknIconButton--grey open-tab"><i class="icon icon-eye-open"></i></span>
+                    <% } else { %>
+                    <span class="AknButtonList-item AknIconButton AknIconButton--grey open-media"><i class="icon icon-eye-open"></i></span>
+                    <% } %>
+                    <% if (null != mediaDownloadUrl && mediaUrlGenerator.isImageFile(mediaDownloadUrl)) { %>
+                    <a href="<%- mediaDownloadUrl %>" class="AknButtonList-item AknIconButton AknIconButton--grey download-file" download><i class="icon icon-cloud-download"></i></a>
+                    <% } %>
+                    <span class="AknButtonList-item AknIconButton AknIconButton--grey clear-field <%- editMode === 'view' ? 'AknIconButton--hide' : '' %>"><i class="icon icon-trash"></i></span>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>

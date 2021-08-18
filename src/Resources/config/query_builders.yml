@@ -1,0 +1,14 @@
+parameters:
+    flagbit.pixxio.query.elasticsearch.filter.pixxio.class: Akeneo\Pim\Enrichment\Bundle\Elasticsearch\Filter\Attribute\TextFilter
+
+services:
+    flagbit.pixxio.query.elasticsearch.filter.text:
+        class: '%flagbit.pixxio.query.elasticsearch.filter.pixxio.class%'
+        arguments:
+            - '@pim_catalog.validator.helper.attribute_filter'
+            - [ !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
+            - ['STARTS WITH', 'CONTAINS', 'DOES NOT CONTAIN', '=', 'EMPTY', 'NOT EMPTY', '!=']
+        tags:
+            - { name: 'pim_catalog.elasticsearch.query.product_filter', priority: 30 }
+            - { name: 'pim_catalog.elasticsearch.query.product_model_filter', priority: 30 }
+            - { name: 'pim_catalog.elasticsearch.query.product_and_product_model_filter', priority: 30 }

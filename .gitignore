@@ -11,4 +11,3 @@
 /.phpunit.result.cache
 /node_modules
 ./vendor
-/.idea

@@ -1,0 +1,15 @@
+attribute_fields:
+    pixxio-image-field:   flagbit/pixxio-field
+
+extensions:
+    pixxio-modal-template:
+        module: pixxio/modal/overlay
+
+    pim-family-edit-form-properties-general-attribute-as-image:
+        config:
+            validAttributeTypes: [ 'pixxio_image' ]
+
+    pim-product-edit-form-main-image:
+        module: pixxio/product-edit-form/main-image
+        parent: pim-product-edit-form
+        targetZone: main-image
