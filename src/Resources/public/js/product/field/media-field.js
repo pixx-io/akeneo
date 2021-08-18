@@ -65,14 +65,11 @@ define(
                                     if (apiConfig.key !== '' && apiConfig.url !== '') {
                                         const formModal = new FormModal('pixxio-modal-template', this.updateModel.bind(this), modalParameters);
 
-                                        formModal.open().always(
-                                            function () {
-                                                this.removePixxioElement()
-                                            }.bind(this)
-                                        );
+                                        formModal.open();
 
                                         const p = new PIXXIO(
                                             {
+                                                element: document.getElementById('pixxio-integration'),
                                                 appKey: apiConfig.key,
                                                 appUrl: apiConfig.url,
                                                 v1: apiConfig.version
@@ -99,13 +96,6 @@ define(
                             )
                         }.bind(this)
                     );
-                },
-                removePixxioElement: function () {
-                    let frame = null;
-
-                    while (frame = document.getElementById('pixxio-integration')) {
-                        frame.remove();
-                    }
                 },
                 setUploadContextValue: function (value) {
                     var productValue = AttributeManager.getValue(
