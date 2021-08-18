@@ -40,6 +40,3 @@ make upgrade-front
 
 Once done that the system is ready to use the new attribute type.
 
-## Usage
-
-See the [user guides](../blob/master/doc)
