@@ -1,0 +1,470 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement ph
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_title "Pixx.io Akeneo CE connector manual"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Pixx.io Akeneo CE Connector Benutzerhandbuch
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Dieses Handbuch zeigt die Installation des Moduls und die spätere Verwendung
+\end_layout
+
+\begin_layout Section
+Anmerkungen
+\end_layout
+
+\begin_layout Standard
+Für die Installation sollte man wissen wie man eine Erweiterung in der Akeneo
+ Umgebung installiert.
+ Dies wird in der 
+\begin_inset CommandInset href
+LatexCommand href
+name "Akeneo Dokumentation"
+target "https://help.akeneo.com/magento2-connector/articles/download-connector.html"
+literal "false"
+
+\end_inset
+
+ erklärt.
+\end_layout
+
+\begin_layout Standard
+Bitte seien Sie sich bewusst darüber, dass ein Akeneo Sicherheitsmechanismus
+ etwas erweitert werden muss um dieses Modul zu verwenden.
+ Die 
+\begin_inset CommandInset href
+LatexCommand href
+name "CSP (Content Security Policy)"
+target "https://de.wikipedia.org/wiki/Content_Security_Policy"
+literal "false"
+
+\end_inset
+
+ muss hier Anfragen auf den Pixx.io Server erlauben, durch den Einsatz des
+ JSDK (Pixx.io eigenes SDK für externe Integrationen) müssen auch Schriften
+ von Google.com geladen werden können.
+\end_layout
+
+\begin_layout Section
+Nach der Installation
+\end_layout
+
+\begin_layout Standard
+Nach der Installation des Moduls muss es konfiguriert werden mit den Zugangsdate
+n Ihres Pixx.io Systems.
+ Diese Daten werden in die
+\shape italic
+.env
+\shape default
+ Datei im Wurzelverzeichnis der Akeneo-Installation wie unten angegeben
+ angehängt.
+\end_layout
+
+\begin_layout LyX-Code
+PIXXIO_KEY=yourPixxioKey
+\end_layout
+
+\begin_layout LyX-Code
+PIXXIO_URL=https://yourPixxioUrl
+\end_layout
+
+\begin_layout LyX-Code
+PIXXIO_OLD_VERSION=true
+\end_layout
+
+\begin_layout Standard
+Drüber hinaus müssen Sie die Route für das Modul innerhalb der Systemkonfigurati
+on hinzufügen, indem Sie die folgenden Zeilen in die Datei
+\shape italic
+config/routes/routes.yml (bei Bedarf Verzeichnis/Datei anlegen) eintragen.
+\end_layout
+
+\begin_layout LyX-Code
+flagbit_pixxio_internal_api:
+\end_layout
+
+\begin_layout LyX-Code
+resource: '@PixxioConnectorBundle/Resources/config/routing.yml'
+\end_layout
+
+\begin_layout Standard
+Als letztes muss das Modul (auch Bundle genannt) im System angemeldet werden.
+ Dies geschieht in der Datei
+\shape italic
+config/bundles.php
+\end_layout
+
+\begin_layout LyX-Code
+return [
+\end_layout
+
+\begin_layout LyX-Code
+
+\backslash
+Flagbit
+\backslash
+PixxioConnector
+\backslash
+PixxioConnectorBundle::class
+\end_layout
+
+\begin_layout LyX-Code
+              => ['dev' => true, 'test' => true, 'prod' => true],
+\end_layout
+
+\begin_layout LyX-Code
+];
+\end_layout
+
+\begin_layout Standard
+Jetzt sollten Sie den Cache löschen und das Frontend bauen.
+ Über diese Kommandos ausgeführt im Akeneo-Wurzelverzeichnis wird das ausgelöst
+\end_layout
+
+\begin_layout Quotation
+make cache #upgrade-front wird das auch ausführen, um sicher zu sein führen
+ Sie dies einfach aus
+\end_layout
+
+\begin_layout Quotation
+make upgrade-front
+\end_layout
+
+\begin_layout Section
+Attribut anlegen
+\end_layout
+
+\begin_layout Standard
+Gehen Sie in die Einstellungen => Attribute => Attribut anlegen => Pixxio
+ Media
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../.images/createAttribute.png
+	lyxscale 50
+	scale 25
+	groupId screenshots
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../.images/pixxioAttribute.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Stellen Sie das Attribut entsprechend wie benötigt ein.
+\end_layout
+
+\begin_layout Standard
+Nach der Erstellung müssen Sie noch das Attribut einer Familie zuweisen
+ wo Sie dieses verwenden wollen.
+ Das können sie in dem Menüpunkt Produktfamilien erledigen.
+\end_layout
+
+\begin_layout Standard
+Wenn Sie die Zuweisung gespeichert haben stellen sie bitte sicher, dass
+ Ihr Attribut auf der richtigen Varianten-Ebene liegt.
+ Wenn Sie möchten können Sie auch das Attribut als Hauptbild für Ihre Produkte
+ verwenden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../.images/imageAsMainOptional.png
+	lyxscale 50
+	scale 25
+	groupId screenshots
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../.images/attributeViewInProduct.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Verwendung des Attributs
+\end_layout
+
+\begin_layout Standard
+Wenn das Attribut erstellt und über eine Familie verbunden ist können Sie
+ damit beginnen ihre Produkte mit den Bildern aus Pixx.io zu verbinden.
+ Dazu gehen Sie auf ein Produkt mit dem entsprechenden Attribut.
+ Nach einem Klick auf das aktuell leere Feld öffnet sich ein Anmeldedialog
+ wo Sie ihre persönlichen Pixx.io Logindaten benötigen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../.images/attributeSelectAuth.png
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../.images/attributeSelectImage.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dieser Login ist nicht immer nötig, nach einer längeren Pause kann dies
+ aber wieder nötig sein.
+\end_layout
+
+\begin_layout Standard
+Im nächsten Dialog können Sie nun das Bild auswählen.
+ Verwenden Sie die Dialogoptionen und Suche um ein spezielles Asset zu finden
+ oder das Format zu ändern.
+ Nach dem Selektieren eines Bildes speichern Sie dieses mit einem Klick
+ auf Speichern auf der Produktbearbeitungsseite.
+ Es wird nicht direkt nach der Auswahl gespeichert, wie es auch bei den
+ anderen Produktwerten der Fall ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../.images/attributeImageSaved.png
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../.images/attributeImageGrid.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Export/Import/API
+\end_layout
+
+\begin_layout Standard
+Das Pixx.io Medien Attribut kann wie jedes andere Akeneo Attribut verwendet
+ werden.
+ Die Ausgabe im Export oder an der API enthält allerdings zwei Links.
+ Diese können gleich sein, je nachdem welches Format im Auswahldialog verwendet
+ wurde.
+\end_layout
+
+\begin_layout Standard
+Der erste Link ist das normale Bild während der zweite Link, durch ein |-Symbol
+ getrennt, das Thumbnail darstellt.
+ Das Format kann genauso importiert werden wie es exportiert wird.
+ Bitte verwenden Sie nur Pixx.io URLs, andere werden nicht funktionieren.
+\end_layout
+
+\begin_layout Standard
+Sie können die Thumbnail-Url weglassen, das wird allerdings das vollständige
+ Bild in der Produktübersicht oder Produkt-Header laden wenn dieses Attribut
+ als Hauptbild markiert ist.
+\end_layout
+
+\begin_layout Section
+Fehlerbehebung
+\end_layout
+
+\begin_layout Subsection
+Auswahldialog erscheint nicht
+\end_layout
+
+\begin_layout Standard
+Bitte überprüfen Sie Ihre Zugangsdaten-Konfiguration.
+\end_layout
+
+\begin_layout Subsection
+Das Attribut wird nicht auf der Produktseite angezeigt
+\end_layout
+
+\begin_layout Standard
+Es kann vorkommen, dass ein anderes Modul den CSP überschreibt.
+ Ohne den korrekten CSP kann dieses Modul nicht arbeiten.
+ Bitte fragen Sie Ihren Entwickler nach Möglichkeiten.
+\end_layout
+
+\end_body
+\end_document
