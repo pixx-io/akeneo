@@ -10,13 +10,13 @@
         bootstrap="./vendor/autoload.php">
 
     <testsuites>
-        <testsuite name="FlagbitPixxioConnector_Test">
+        <testsuite name="PixxioConnector_Test">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
 
     <php>
-        <env name="KERNEL_CLASS" value="Flagbit\PixxioConnector\Test\Kernel\TestKernel"/>
+        <env name="KERNEL_CLASS" value="Pixxio\PixxioConnector\Test\Kernel\TestKernel"/>
         <env name="APP_ENV" value="test"/>
         <env name="APP_INDEX_HOSTS" value="elasticsearch:9200"/>
         <env name="APP_DATABASE_HOST" value="mysql"/>

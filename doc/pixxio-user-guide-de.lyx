@@ -183,7 +183,7 @@ config/routes/routes.yml (bei Bedarf Verzeichnis/Datei anlegen) eintragen.
 \end_layout
 
 \begin_layout LyX-Code
-flagbit_pixxio_internal_api:
+pixxio_pixxio_internal_api:
 \end_layout
 
 \begin_layout LyX-Code
@@ -204,7 +204,7 @@ return [
 \begin_layout LyX-Code
 
 \backslash
-Flagbit
+Pixxio
 \backslash
 PixxioConnector
 \backslash
