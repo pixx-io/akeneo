@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace spec\Flagbit\PixxioConnector\Decorator;
+namespace spec\Pixxio\PixxioConnector\Decorator;
 
 use Akeneo\Pim\Enrichment\Component\Product\Normalizer\InternalApi\ImageNormalizer;
 use Akeneo\Pim\Enrichment\Component\Product\Value\MediaValueInterface;
 use Akeneo\Pim\Enrichment\Component\Product\Value\ScalarValue;
 use Akeneo\Tool\Component\FileStorage\Model\FileInfoInterface;
-use Flagbit\PixxioConnector\Decorator\ImageNormalizerDecorator;
+use Pixxio\PixxioConnector\Decorator\ImageNormalizerDecorator;
 use PhpSpec\ObjectBehavior;
 
 class ImageNormalizerDecoratorSpec extends ObjectBehavior

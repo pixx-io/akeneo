@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Flagbit\PixxioConnector;
+namespace Pixxio\PixxioConnector;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

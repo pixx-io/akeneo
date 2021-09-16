@@ -7,7 +7,7 @@ define(
         'underscore',
         'routing',
         'pim/attribute-manager',
-        'flagbit/template/product/field/pixxio-image',
+        'pixxio/template/product/field/pixxio-image',
         'pim/dialog',
         'oro/mediator',
         'pixxio/modal/overlay',
@@ -58,7 +58,7 @@ define(
                 openModal: function () {
                     const modalParameters = this.getModalConfig();
 
-                    fetch(Routing.generate('flagbit_pixxio_connector_config'), this.getConfigQueryParameters()).then(
+                    fetch(Routing.generate('pixxio_pixxio_connector_config'), this.getConfigQueryParameters()).then(
                         function (config) {
                             config.json().then(
                                 function (apiConfig) {
@@ -90,7 +90,7 @@ define(
                                             }.bind(formModal)
                                         );
                                     } else {
-                                        Dialog.alert(__('flagbit_pixxio.message.config'))
+                                        Dialog.alert(__('pixxio_pixxio.message.config'))
                                     }
                                 }.bind(this)
                             )

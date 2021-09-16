@@ -3,8 +3,8 @@ config:
         pixxio/product-edit-form/main-image: pixxioconnector/js/product/form/main-image.ts
         pim/media-url-generator: pixxioconnector/js/generator/media-url-generator
 
-        flagbit/pixxio-field: pixxioconnector/js/product/field/media-field
-        flagbit/template/product/field/pixxio-image: pixxioconnector/templates/product/field/media.html
+        pixxio/pixxio-field: pixxioconnector/js/product/field/media-field
+        pixxio/template/product/field/pixxio-image: pixxioconnector/templates/product/field/media.html
 
         pixxio/jsdk: pixxioconnector/lib/jsdk/pixxio.jsdk.min
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Test\Provider\Field;
+namespace Pixxio\PixxioConnector\Test\Provider\Field;
 
 use Akeneo\Pim\Structure\Component\Model\Attribute;
-use Flagbit\PixxioConnector\AttributeType\PixxioType;
+use Pixxio\PixxioConnector\AttributeType\PixxioType;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class PixxioFieldProviderTest extends KernelTestCase

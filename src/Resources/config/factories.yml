@@ -1,4 +1,4 @@
 services:
-    flagbit.pixxio.factory.value.field:
-        class: Flagbit\PixxioConnector\Component\Product\Factory\Value\PixxioValueFactory
+    pixxio.pixxio.factory.value.field:
+        class: Pixxio\PixxioConnector\Component\Product\Factory\Value\PixxioValueFactory
         tags: ['akeneo.pim.enrichment.factory.product_value']

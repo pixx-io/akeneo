@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Flagbit\PixxioConnector\Provider\Field;
+namespace spec\Pixxio\PixxioConnector\Provider\Field;
 
-use Flagbit\PixxioConnector\Provider\Field\PixxioFieldProvider;
+use Pixxio\PixxioConnector\Provider\Field\PixxioFieldProvider;
 use PhpSpec\ObjectBehavior;
 use Akeneo\Pim\Structure\Component\Model\AttributeInterface;
 
@@ -14,7 +14,7 @@ class PixxioFieldProviderSpec extends ObjectBehavior
         $this->shouldHaveType(PixxioFieldProvider::class);
     }
 
-    public function it_returns_flagbit_pixxio_field()
+    public function it_returns_pixxio_pixxio_field()
     {
         $element = [
             'foo' => 'bar',

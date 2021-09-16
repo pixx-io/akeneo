@@ -1,3 +1,3 @@
-flagbit_pixxio_internal_api:
+pixxio_pixxio_internal_api:
     resource: '@PixxioConnectorBundle/Resources/config/routing/internal_api/config.yml'
     prefix: /pixxio-config

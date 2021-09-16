@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Flagbit\PixxioConnector\AttributeType;
+namespace spec\Pixxio\PixxioConnector\AttributeType;
 
-use Flagbit\PixxioConnector\AttributeType\PixxioType;
+use Pixxio\PixxioConnector\AttributeType\PixxioType;
 use PhpSpec\ObjectBehavior;
 
 class PixxioTypeSpec extends ObjectBehavior

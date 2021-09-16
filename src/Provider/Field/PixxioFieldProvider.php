@@ -1,10 +1,10 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Provider\Field;
+namespace Pixxio\PixxioConnector\Provider\Field;
 
 use Akeneo\Platform\Bundle\UIBundle\Provider\Field\FieldProviderInterface;
 use Akeneo\Pim\Structure\Component\Model\AttributeInterface;
-use Flagbit\PixxioConnector\AttributeType\PixxioType;
+use Pixxio\PixxioConnector\AttributeType\PixxioType;
 
 class PixxioFieldProvider implements FieldProviderInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Controller\ConfigController;
+namespace Pixxio\PixxioConnector\Controller\ConfigController;
 
-use Flagbit\PixxioConnector\Controller\InternalApi\ConfigController;
+use Pixxio\PixxioConnector\Controller\InternalApi\ConfigController;
 use Oro\Bundle\SecurityBundle\SecurityFacade;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
