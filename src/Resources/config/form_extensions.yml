@@ -1,5 +1,5 @@
 attribute_fields:
-    pixxio-image-field:   flagbit/pixxio-field
+    pixxio-image-field:   pixxio/pixxio-field
 
 extensions:
     pixxio-modal-template:

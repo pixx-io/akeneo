@@ -1,8 +1,8 @@
 services:
-    flagbit.pixxio.validator.constraint.family_attribute_as_image:
+    pixxio.pixxio.validator.constraint.family_attribute_as_image:
         class: 'Akeneo\Pim\Structure\Component\Validator\Constraints\FamilyAttributeAsImageValidator'
         arguments:
-            - [ 'pim_catalog_image', 'pim_catalog_asset_collection', !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE
+            - [ 'pim_catalog_image', 'pim_catalog_asset_collection', !php/const \Pixxio\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE
             ]
         tags:
             - { name: validator.constraint_validator, alias: pim_family_attribute_as_image_validator }

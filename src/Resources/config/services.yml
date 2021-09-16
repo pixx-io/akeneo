@@ -7,8 +7,8 @@ parameters:
     pixxio_api_old: '%env(default:fallback_old:bool:PIXXIO_OLD_VERSION)%'
 
 services:
-    flagbit.pixxio.connector_internal_api_config:
-        class:  Flagbit\PixxioConnector\Controller\InternalApi\ConfigController
+    pixxio.pixxio.connector_internal_api_config:
+        class:  Pixxio\PixxioConnector\Controller\InternalApi\ConfigController
         public: true
         arguments:
             - '@oro_security.security_facade'
@@ -16,29 +16,29 @@ services:
             - '%pixxio_api_url%'
             - '%pixxio_api_old%'
 
-    flagbit.pixxio.provider.field:
-        class: Flagbit\PixxioConnector\Provider\Field\PixxioFieldProvider
+    pixxio.pixxio.provider.field:
+        class: Pixxio\PixxioConnector\Provider\Field\PixxioFieldProvider
         tags: [name: pim_enrich.provider.field]
 
-    flagbit.pixxio.mask_item:
-        class: Flagbit\PixxioConnector\Component\Product\Completeness\MaskItemGenerator\PixxioMaskItem
+    pixxio.pixxio.mask_item:
+        class: Pixxio\PixxioConnector\Component\Product\Completeness\MaskItemGenerator\PixxioMaskItem
         tags: [name: 'akeneo.pim.enrichment.completeness.mask_item_generator']
 
-    flagbit.pixxio.updater.setter:
+    pixxio.pixxio.updater.setter:
         class: '%pim_catalog.updater.setter.value.class%'
         parent: 'pim_catalog.updater.setter.abstract'
         arguments:
-            - [ !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
+            - [ !php/const \Pixxio\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
         tags: [name: 'pim_catalog.updater.setter']
 
-    flagbit.pixxio.image.normalizer:
-        class: Flagbit\PixxioConnector\Decorator\ImageNormalizerDecorator
+    pixxio.pixxio.image.normalizer:
+        class: Pixxio\PixxioConnector\Decorator\ImageNormalizerDecorator
         decorates: 'pim_enrich.normalizer.image'
         decoration_inner_name: 'pim_enrich.normalizer.image.inner'
         arguments: ['@pim_enrich.normalizer.image.inner']
 
-    flagbit.pixxio.security.event_listener.add_csp:
-        class: Flagbit\PixxioConnector\EventListener\AddContentSecurityPolicyListener
+    pixxio.pixxio.security.event_listener.add_csp:
+        class: Pixxio\PixxioConnector\EventListener\AddContentSecurityPolicyListener
         arguments:
             - '@security.script_nonce_generator'
             - '%pixxio_csp_use%'

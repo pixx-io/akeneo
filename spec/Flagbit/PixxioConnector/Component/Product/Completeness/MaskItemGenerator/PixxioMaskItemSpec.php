@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Flagbit\PixxioConnector\Component\Product\Completeness\MaskItemGenerator;
+namespace spec\Pixxio\PixxioConnector\Component\Product\Completeness\MaskItemGenerator;
 
-use Flagbit\PixxioConnector\Component\Product\Completeness\MaskItemGenerator\PixxioMaskItem;
+use Pixxio\PixxioConnector\Component\Product\Completeness\MaskItemGenerator\PixxioMaskItem;
 use PhpSpec\ObjectBehavior;
 
 class PixxioMaskItemSpec extends ObjectBehavior

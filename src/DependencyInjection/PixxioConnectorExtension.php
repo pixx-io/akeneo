@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Flagbit\PixxioConnector\DependencyInjection;
+namespace Pixxio\PixxioConnector\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

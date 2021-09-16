@@ -1,16 +1,16 @@
 {
-    "name": "flagbit/akeneo-pixxio-connector",
+    "name": "pixxio/akeneo-pixxio-connector",
     "description": "Pixx.io integration to Akeneo 5+ CE",
     "type": "library",
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Flagbit\\PixxioConnector\\": "src/"
+            "Pixxio\\PixxioConnector\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Flagbit\\PixxioConnector\\Test\\": "tests/"
+            "Pixxio\\PixxioConnector\\Test\\": "tests/"
         }
     },
     "conflict": {

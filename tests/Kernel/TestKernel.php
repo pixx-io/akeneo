@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Test\Kernel;
+namespace Pixxio\PixxioConnector\Test\Kernel;
 
 require_once __DIR__.'/../../vendor/akeneo/pim-community-dev/src/Kernel.php';
 

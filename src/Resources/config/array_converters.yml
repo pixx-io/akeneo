@@ -1,17 +1,17 @@
 
 services:
-    flagbit.pixxio.array_converter.flat_to_standard.product.value_converter.pixxio:
+    pixxio.pixxio.array_converter.flat_to_standard.product.value_converter.pixxio:
         class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\ArrayConverter\FlatToStandard\ValueConverter\TextConverter'
         parent: pim_connector.array_converter.flat_to_standard.product.value_converter.abstract
         arguments:
-            - [ !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
+            - [ !php/const \Pixxio\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
         tags:
             - { name: 'pim_connector.array_converter.flat_to_standard.product.value_converter' }
 
-    flagbit.pixxio.array_converter.standard_to_flat.product.value_converter.pixxio:
+    pixxio.pixxio.array_converter.standard_to_flat.product.value_converter.pixxio:
         class: 'Akeneo\Pim\Enrichment\Component\Product\Connector\ArrayConverter\StandardToFlat\Product\ValueConverter\TextConverter'
         arguments:
             - '@pim_connector.array_converter.flat_to_standard.product.attribute_columns_resolver'
-            - [ !php/const \Flagbit\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
+            - [ !php/const \Pixxio\PixxioConnector\AttributeType\PixxioType::PIXXIO_IMAGE ]
         tags:
             - { name: 'pim_connector.array_converter.standard_to_flat.product.value_converter' }

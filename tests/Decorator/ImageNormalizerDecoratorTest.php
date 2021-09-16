@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Decorator;
+namespace Pixxio\PixxioConnector\Decorator;
 
 use Akeneo\Pim\Enrichment\Component\Product\Model\ValueInterface;
 use Akeneo\Pim\Enrichment\Component\Product\Normalizer\InternalApi\ImageNormalizer;

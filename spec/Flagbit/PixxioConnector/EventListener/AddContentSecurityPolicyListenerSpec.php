@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Flagbit\PixxioConnector\EventListener;
+namespace spec\Pixxio\PixxioConnector\EventListener;
 
 use Akeneo\Platform\Bundle\UIBundle\EventListener\ScriptNonceGenerator;
 use PhpSpec\ObjectBehavior;

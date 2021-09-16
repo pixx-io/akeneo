@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Controller\InternalApi;
+namespace Pixxio\PixxioConnector\Controller\InternalApi;
 
 use Oro\Bundle\SecurityBundle\SecurityFacade;
 use Symfony\Component\HttpFoundation\JsonResponse;

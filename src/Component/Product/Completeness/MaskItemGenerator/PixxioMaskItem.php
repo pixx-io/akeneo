@@ -1,9 +1,9 @@
 <?php
 
-namespace Flagbit\PixxioConnector\Component\Product\Completeness\MaskItemGenerator;
+namespace Pixxio\PixxioConnector\Component\Product\Completeness\MaskItemGenerator;
 
 use Akeneo\Pim\Enrichment\Component\Product\Completeness\MaskItemGenerator\MaskItemGeneratorForAttributeType;
-use Flagbit\PixxioConnector\AttributeType\PixxioType;
+use Pixxio\PixxioConnector\AttributeType\PixxioType;
 
 class PixxioMaskItem implements MaskItemGeneratorForAttributeType
 {
