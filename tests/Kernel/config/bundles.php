@@ -2,5 +2,5 @@
 
 return [
     // Tests related bundles
-    \Flagbit\PixxioConnector\PixxioConnectorBundle::class => ['all' => true],
+    \Pixxio\PixxioConnector\PixxioConnectorBundle::class => ['all' => true],
 ];

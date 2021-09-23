@@ -1,4 +1,4 @@
-flagbit_pixxio_connector_config:
+pixxio_pixxio_connector_config:
     path: ''
-    defaults: { _controller: flagbit.pixxio.connector_internal_api_config:indexAction }
+    defaults: { _controller: pixxio.pixxio.connector_internal_api_config:indexAction }
     methods: [GET]

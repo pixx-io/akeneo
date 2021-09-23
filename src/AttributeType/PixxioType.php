@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagbit\PixxioConnector\AttributeType;
+namespace Pixxio\PixxioConnector\AttributeType;
 
 use Akeneo\Pim\Structure\Component\AttributeType\AbstractAttributeType;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagbit\PixxioConnector\AttributeType;
+namespace Pixxio\PixxioConnector\AttributeType;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 

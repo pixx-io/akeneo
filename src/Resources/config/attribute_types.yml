@@ -1,9 +1,9 @@
 parameters:
-    flagbit.pixxio.attribute_type.class: Flagbit\PixxioConnector\AttributeType\PixxioType
+    pixxio.pixxio.attribute_type.class: Pixxio\PixxioConnector\AttributeType\PixxioType
 
 services:
-    flagbit.pixxio.attribute_type.image:
-        class: "%flagbit.pixxio.attribute_type.class%"
+    pixxio.pixxio.attribute_type.image:
+        class: "%pixxio.pixxio.attribute_type.class%"
         arguments:
             - text
         tags:

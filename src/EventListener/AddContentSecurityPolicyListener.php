@@ -1,6 +1,6 @@
 <?php
 
-namespace Flagbit\PixxioConnector\EventListener;
+namespace Pixxio\PixxioConnector\EventListener;
 
 use Akeneo\Platform\Bundle\UIBundle\EventListener\ScriptNonceGenerator;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

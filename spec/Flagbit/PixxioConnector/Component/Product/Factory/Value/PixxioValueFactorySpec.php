@@ -1,12 +1,12 @@
 <?php
 
-namespace spec\Flagbit\PixxioConnector\Component\Product\Factory\Value;
+namespace spec\Pixxio\PixxioConnector\Component\Product\Factory\Value;
 
 use Akeneo\Pim\Enrichment\Component\Product\Value\ScalarValue;
 use Akeneo\Pim\Structure\Component\Query\PublicApi\AttributeType\Attribute;
 use Akeneo\Tool\Component\StorageUtils\Exception\InvalidPropertyTypeException;
 use EmptyIterator;
-use Flagbit\PixxioConnector\Component\Product\Factory\Value\PixxioValueFactory;
+use Pixxio\PixxioConnector\Component\Product\Factory\Value\PixxioValueFactory;
 use PhpSpec\ObjectBehavior;
 
 class PixxioValueFactorySpec extends ObjectBehavior
