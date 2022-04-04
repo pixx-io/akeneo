@@ -31,7 +31,7 @@ class AddContentSecurityPolicyListener implements EventSubscriberInterface
         if ($this->isUsed) {
             // @codingStandardsIgnoreStart
             $policy = sprintf(
-                "default-src 'self' *.akeneo.com *.pixxio.media fonts.googleapis.com 'unsafe-inline'; script-src 'self' localhost:* 127.0.0.1:* 'unsafe-eval' 'nonce-%s' 'unsafe-inline'; img-src 'self' *.pixxio.media data: ; frame-src * ; font-src 'self' fonts.gstatic.com fonts.googleapis.com data:",
+                "default-src 'self' *.akeneo.com *.pixxio.media *.px.media *.pixx.io fonts.googleapis.com 'unsafe-inline'; script-src 'self' localhost:* 127.0.0.1:* 'unsafe-eval' 'nonce-%s' 'unsafe-inline'; img-src 'self' *.pixxio.media *.px.media *.pixx.io data: ; frame-src * ; font-src 'self' fonts.gstatic.com fonts.googleapis.com data:",
                 $this->generatedNonce
             );
             // @codingStandardsIgnoreEnd
